@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h2 {
+  font-family: "Times New Roman", Times, serif;
+  margin: 16px;
+  font-size: 8rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: white;
+  transition: all 2s linear;
+  position: relative;
+  overflow: hidden;
+}
+h2::before {
+  content: attr(data-name);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  color: rgb(14, 134, 14);
+  overflow: hidden;
+  animation: animate 6s linear infinite;
+}
+@keyframes animate {
+  0%,
+  100% {
+    width: 0;
+  }
+  70%,
+  90% {
+    width: 100%;
+  }
+}
